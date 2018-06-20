@@ -2,19 +2,22 @@ package com.algaworks.algamoney.api.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import java.util.Objects;
 
 @Entity
-@Table(name = "categoria")
-public class Categoria {
+@Table(name = "pessoa")
+public class Pessoa {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 
 	@NotNull
-	@Size(min = 3, max = 20)
 	private String nome;
+
+	@Embedded
+	private Endereco endereco;
+
+	@NotNull
+	private Boolean ativo;
 
 	/**
 	 * Obtem o valor do atributo codigo.
@@ -52,17 +55,39 @@ public class Categoria {
 		nome = pNome;
 	}
 
-	@Override
-	public boolean equals(final Object pO) {
-		if (this == pO) return true;
-		if (pO == null || getClass() != pO.getClass()) return false;
-		Categoria categoria = (Categoria) pO;
-		return Objects.equals(codigo, categoria.codigo);
+	/**
+	 * Obtem o valor do atributo endereco.
+	 *
+	 * @return Valor do atributo endereco
+	 */
+	public Endereco getEndereco() {
+		return endereco;
 	}
 
-	@Override
-	public int hashCode() {
+	/**
+	 * Atualiza o valor do atributo endereco.
+	 *
+	 * @param pEndereco
+	 */
+	public void setEndereco(final Endereco pEndereco) {
+		endereco = pEndereco;
+	}
 
-		return Objects.hash(codigo);
+	/**
+	 * Obtem o valor do atributo ativo.
+	 *
+	 * @return Valor do atributo ativo
+	 */
+	public Boolean getAtivo() {
+		return ativo;
+	}
+
+	/**
+	 * Atualiza o valor do atributo ativo.
+	 *
+	 * @param pAtivo
+	 */
+	public void setAtivo(final Boolean pAtivo) {
+		ativo = pAtivo;
 	}
 }
