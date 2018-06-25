@@ -29,7 +29,7 @@ public class Lancamento {
 
 	@ManyToOne
 	@JoinColumn(name = "codigo_categoria")
-	private Categoria categgoria;
+	private Categoria categoria;
 
 	@ManyToOne
 	@JoinColumn(name = "codigo_pessoa")
@@ -162,21 +162,21 @@ public class Lancamento {
 	}
 
 	/**
-	 * Obtem o valor do atributo categgoria.
+	 * Obtem o valor do atributo categoria.
 	 *
-	 * @return Valor do atributo categgoria
+	 * @return Valor do atributo categoria
 	 */
-	public Categoria getCateggoria() {
-		return categgoria;
+	public Categoria getCategoria() {
+		return categoria;
 	}
 
 	/**
-	 * Atualiza o valor do atributo categgoria.
+	 * Atualiza o valor do atributo categoria.
 	 *
-	 * @param pCateggoria
+	 * @param pCategoria
 	 */
-	public void setCateggoria(final Categoria pCateggoria) {
-		categgoria = pCateggoria;
+	public void setCategoria(final Categoria pCategoria) {
+		categoria = pCategoria;
 	}
 
 	/**
