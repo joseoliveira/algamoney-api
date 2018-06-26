@@ -22,7 +22,7 @@ public class PessoaService {
 		return pessoaRepository.save(pessoaSalva);
 	}
 
-	private Pessoa buscarPessoaPeloCodigo(final Long codigo) {
+	public Pessoa buscarPessoaPeloCodigo(final Long codigo) {
 		Optional<Pessoa> pessoaSalvaOptional = pessoaRepository.findById(codigo);
 
 		pessoaSalvaOptional
