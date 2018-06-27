@@ -50,11 +50,15 @@ public class LancamentoRepositoryImpl implements LancamentoRepositoryQuery {
 		}
 
 		if (lancamentoFilter.getDataVencimentoDe() != null) {
-			//predicates.add();
+			predicates.add(
+					builder.greaterThanOrEqualTo(root.get("dataVencimento"), lancamentoFilter.getDataVencimentoDe())
+			);
 		}
 
 		if (lancamentoFilter.getDataVencimentoAte() != null) {
-			//predicates.add();
+			predicates.add(
+					builder.lessThanOrEqualTo(root.get("dataVencimento"), lancamentoFilter.getDataVencimentoAte())
+			);
 		}
 
 		return predicates.toArray(new Predicate[predicates.size()]);
