@@ -27,9 +27,8 @@ public class LancamentoRepositoryImpl implements LancamentoRepositoryQuery {
 		CriteriaQuery<Lancamento> criteria = builder.createQuery(Lancamento.class);
 		Root<Lancamento> root = criteria.from(Lancamento.class);
 
-		// criar as restrições
+		// Criar as restrições
 		Predicate[] predicates = criarRestricoes(lancamentoFilter, builder, root);
-
 
 		criteria.where(predicates);
 
