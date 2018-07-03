@@ -12,4 +12,5 @@ public class AuthenticationMananagerProvider extends WebSecurityConfigurerAdapte
 	public AuthenticationManager authenticationManagerBean() throws Exception {
 		return super.authenticationManagerBean();
 	}
+
 }

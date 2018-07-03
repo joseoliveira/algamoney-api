@@ -42,4 +42,5 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	public void configure(final ResourceServerSecurityConfigurer resources) throws Exception {
 		resources.stateless(true);
 	}
+
 }

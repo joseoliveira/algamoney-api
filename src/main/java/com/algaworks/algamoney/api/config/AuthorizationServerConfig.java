@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.BeanIds;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
@@ -32,8 +31,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 				// Nome do client (aplicação)
 				.withClient("angular")
 				// Senha do client (aplicação)
-				.secret("@ngul@r0")
-				// Consegui limitar o acesso do client (aplicação) em questão
+				.secret("{noop}@ngul@r0")
+				// Conseguir limitar o acesso do client (aplicação) em questão
 				.scopes("read", "write")
 				// Password flow -> fluxo onde a aplicação recebe o usuário e senha do usuário
 				// Quando a aplicação client é de inteira confiança
