@@ -41,10 +41,10 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 				// Período em segundos que o token ficará ativo
 				// 1800 / 60 = 30 minutos
 				.accessTokenValiditySeconds(20)
-				// Refresh token fica guardado via https no cookie do browser
-				// Por isso, 1 dia inteiro para expirar
+				// Refresh token fica guardado via http/https no cookie.
+				// Por isso, 1 dia inteiro para expirar.
 				// Para que o usuário não se deslogue da aplicação e ter a necessidade de
-				// fica logando
+				// ficar logando.
 				.refreshTokenValiditySeconds(3600 * 24);
 	}
 
